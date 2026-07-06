@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Time Taken
+
+sort2 uses: Merge Sort
+
+How do you know?: Runtime Taken
+
+sort3 uses: Selection Sort
+
+How do you know?: Execution Time

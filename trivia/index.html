@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function()
+            {
+
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function(){
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector("#feedback1").innerHTML = 'Correct!';
+
+                });
+
+                let incorrects = document.querySelectorAll('.incorrect');
+
+                for (let i = 0; i < incorrects.length; i++)
+                {
+                incorrects[i].addEventListener('click', function(){
+                    incorrects[i].style.backgroundColor = 'red';
+                    document.querySelector("#feedback1").innerHTML = 'Incorrect!';
+                })
+                }
+
+                // For Part 2
+
+                let correct_part2 = 'Yes';
+                let selected_part2 = document.querySelector("#input1");
+
+
+                document.querySelector("#check").addEventListener("click", function()
+                {
+                    if (selected_part2.value === correct_part2)
+                    {
+                        selected_part2.style.backgroundColor = 'green'
+                        document.querySelector("#feedback2").innerHTML = 'Correct!';
+                    }
+                    else
+                    {
+                        selected_part2.style.backgroundColor = 'red'
+                        document.querySelector("#feedback2").innerHTML = 'Incorrect!';
+                    }
+
+
+                });
+
+            });
+
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>What is the capital of Pakistan?</h3>
+                 <button class='incorrect'>Delhi</button>
+                 <button class='incorrect'>New York</button>
+                 <button class='correct'>Islamabad</button>
+                 <button class='incorrect'>Tehran</button>
+                 <button class='incorrect'>Kabul</button>
+
+                 <p id = "feedback1"></p>
+
+                </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3>Is it legal to have pets at home?</h3>
+                 <input type="text" id = "input1">
+                 <button id = 'check' >Check Answer</button>
+                 <p id = "feedback2"></p>
+
+            </div>
+        </div>
+    </body>
+</html>
